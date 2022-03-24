@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bookstore</title>
+</head>
+<body>
+<h1>Categorylist</h1>
+<table>
+<tr>
+     <th>Scifi</th>
+     <th>Action</th>
+     <th>History</th>
+   
+     
+ </tr>
+ <tr th:each ="category : ${categories}">
+ <td th:text="${category.scifi}"></td>
+ <td th:text="${category.action}"></td>
+ <td th:text="${category.history}"></td>
+ <td><a th:href="@{/delete/{id}(id=${category.id})}">Delete</a></td>
+ </tr>
+</table>
+<a href="/addcategory">Add Category</a>
+</body>
+</html>
